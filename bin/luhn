@@ -1,0 +1,35 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+require_relative '../lib/luhn'
+include Luhn
+
+def help
+  puts "Usage: luhn [positive number to validate]"
+end
+
+options = {}
+opts = OptionParser.new do |opts|
+  opts.banner = "Luhn Checksum implementation to help Jason get the unicorn promised by Geezeo"
+
+  opts.on("-h","-?","--help", "Display help") do
+    help
+    exit 0
+  end
+end
+
+begin
+  opts.parse!
+rescue OptionParser::InvalidOption => e
+  help
+  exit 1
+end
+
+if ARGV.size != 1
+  help
+  exit 1
+end
+
+CLI.run(ARGV[0])
+
+
