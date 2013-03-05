@@ -1,9 +1,13 @@
 Base on [Luhn Algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm)
 
+Install gems:
+
+    bundle install
+
 Run specs:
 
-  rake spec
+    rake spec
 
 Run locally (after cloning):
 
-  bin/luhn [positive number to validate]
+    bin/luhn [positive number to validate]
