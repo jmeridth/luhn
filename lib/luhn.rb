@@ -8,7 +8,7 @@ module Luhn
         odds += odd.to_i
 
         double = even.to_i * 2
-        if double > 10
+        if double >= 10
           double = double.to_s.chars.map(&:to_i).inject(:+)
         end
         evens += double
